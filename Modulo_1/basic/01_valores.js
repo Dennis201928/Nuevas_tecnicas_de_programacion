@@ -4,7 +4,7 @@
 //valores de texto -string
 'Dennis Quiguire'
 "Dennis David"
-`Dennis Dvid`
+`Dennis Juiña`
 
 
 //booleano
