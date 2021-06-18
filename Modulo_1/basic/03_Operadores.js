@@ -59,7 +59,7 @@ console.log(numero)
 
 //Desestructurar objetos
 var persona = { nombre: "Dennis", 
-    apellido: "David", 
+    apellido: "Quiguire", 
     edad: 21, 
     viajes: { destino1: "Colombia", destino2: "Mexico" } };
 

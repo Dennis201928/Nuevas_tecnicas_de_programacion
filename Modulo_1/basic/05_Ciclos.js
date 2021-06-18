@@ -15,7 +15,7 @@ for (let index = 0; index < array.length; index++) {
     
 }
 */
-
+////////////////////////////
 //////////////////////////////
 //for in
 var persona={
