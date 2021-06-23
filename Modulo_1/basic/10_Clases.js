@@ -41,6 +41,10 @@ DEBER
 */
 // Clase Persona
 // implementar getters, setter y realizar una implementacion.
+
+//los getters y los setters son construcciones habituales de 
+//los objetos que permiten acceder a valores o propiedades,
+// sin revelar la forma de implementación de las clases.
 class Persona{
     constructor(nombre,apellido,genero){
     this._nombre=nombre;
@@ -82,6 +86,9 @@ console.log(dennis.apellido);
 
 
 // implementar metodos estaticos - Clase Punto, Function distancia
+
+//Los métodos estáticos son llamados sin instanciar su clase. Son 
+//habitualmente utilizados para crear funciones para una aplicación.
 class punto{
     constructor ( x , y ){
         this.x = x;
@@ -100,7 +107,9 @@ console.log (punto.distancia(res1, res2));
 
 
 // Construir clase Persona y estudiante, extender Estudiante con Persona>
-
+//La palabra clave extends se puede usar para crear una subclase a
+//partir de clases personalizadas, así como sus objetos incorporados.
+//class ChildClass extends ParentClass { ... }
 class estudiante extends Persona{
     getnombre(){
         console.log('Le gusta la materia de Matematicas a :'+this._nombre );
