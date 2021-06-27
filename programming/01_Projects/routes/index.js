@@ -57,7 +57,7 @@ router
     if (correo == false) {
       res.json({
         msg: "No se encontro el apellido solicitado",
-        body: [],
+        body: [null],
       });
     } else {
       res.json({
