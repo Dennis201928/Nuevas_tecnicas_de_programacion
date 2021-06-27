@@ -6,9 +6,36 @@ const express = require('express');
 const app = express()
 // routes
 const { RouterIndex } = require('./routes/index')
+/*
 app.use("/", RouterIndex)
 app.use("/user", RouterIndex)
 app.use("/user/data", RouterIndex)
+*/
+
+
+
+/* 
+DEBER
+*/
+
+app.use("/deber-video", RouterIndex)
+app.use("/", RouterIndex)
+
+
+
+/*
+"/"+"/"="//" => "/"
+"/"+"/nick" => "//nick" ="/nick"
+"/"+"/apellido" =>"//apellido"="/apellido"
+
+"/user"+"/nick"=>"/user/nick"
+"/user/data"+"/apellido"=>"/user/data/apellido"
+
+
+*/
+
+
+
 
 /*
         "/"+"/"="//" => "/"
