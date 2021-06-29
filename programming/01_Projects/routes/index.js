@@ -2,13 +2,15 @@
 
 const { Router } = require("express");
 const data = require(`../data.json`);
+const {datavalidator} = require('../middleware/DataValidator')
+const { User } = require("../lib/Schema/User");
 //inicializamos el router
 ///
 const router = Router();
 /*
 DEBER
 */
-
+/*
 router
   .get("/user", (req, res) => {
     // http://localhost:3000/deber-video/user
@@ -66,9 +68,9 @@ router
       });
     }
   });
-
+*/
 //creacion de los endpoint
-/*
+
 router
     .get("/",(req, res) => {
         //http://localhost:3000/
@@ -81,26 +83,13 @@ router
         })
     })
     
-    .get("/name",(req,res)=>{
-        res.json({
-            msg:"LISTADO DE NOMBRES",  
+    .get("/saludo", datavalidator("query", User),(req, res) =>{
 
-        })
-    })
-    .get("/ids",(req,res)=>{
-        res.json({
-            msg:"LISTADO DE IDS",  
-
-        })
-    })
-    .get("/saludo",(req, res) =>{
-
-        const { query: {nombre, apellido} } = req;
-        res.json({
-            saludo:` Hola soy ${nombre} ${apellido}`,
-            //http://localhost:3000/saludo?nombre=Dennis&apellido=Quiguire
-        });
-    })
+      const { query: {nombre, apellido} } = req;
+      res.json({
+          saludo: `Hola soy ${nombre} ${apellido}`,
+      });
+  })
     .get('/saludo/:nombre', (req, res) =>{
         const { params: { nombre } } = req
         console.log(req.params);
@@ -110,7 +99,7 @@ router
         })
     })
 
-    */
+   
 
 //exportamos la rutas
 module.exports.RouterIndex = router;
