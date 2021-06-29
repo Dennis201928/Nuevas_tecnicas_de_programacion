@@ -1,4 +1,4 @@
-//            DataValidator.js
+// DataValidator.js
 
  //const{User}=require(`../lib/Shema/User`)
 
