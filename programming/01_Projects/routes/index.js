@@ -2,8 +2,8 @@
 
 const { Router } = require("express");
 const data = require(`../data.json`);
-const {datavalidator} = require('../middleware/DataValidator')
-const { User } = require("../lib/Schema/User");
+const {datavalidator} = require('../middlewares/DataValidator')
+const { User } = require("../lib/Shema/User");
 //inicializamos el router
 ///
 const router = Router();
