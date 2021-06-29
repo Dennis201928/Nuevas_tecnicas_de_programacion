@@ -1,14 +1,16 @@
 //traemos el paquete
 
-const { Router } = require("express");
+const { Router, request } = require("express");
 const data = require(`../data.json`);
+const { User } = require("../lib/Shema/User");
+const {datavalidator}=require(`../middlewares/DataValidator`)
 //inicializamos el router
 
 const router = Router();
 /*
 DEBER
 */
-
+/*
 router
   .get("/user", (req, res) => {
     // http://localhost:3000/deber-video/user
@@ -66,34 +68,25 @@ router
       });
     }
   });
+   */
+
 
 //creacion de los endpoint
-/*
+
 router
-    .get("/",(req, res) => {
-        //http://localhost:3000/
-    res.send("Hola mundo con ExpressJS");
-    })
+.get("/", (req, res) => {
+  res.send("hola mundo ");
+  })
+
+
     .get("/user",(req, res) => {
         res.json({
         msg:"LISTADO DE USUARIOS",
         body:data,
         })
     })
-    
-    .get("/name",(req,res)=>{
-        res.json({
-            msg:"LISTADO DE NOMBRES",  
-
-        })
-    })
-    .get("/ids",(req,res)=>{
-        res.json({
-            msg:"LISTADO DE IDS",  
-
-        })
-    })
-    .get("/saludo",(req, res) =>{
+   
+    .get("/saludo",datavalidator("query",User),(req, res) =>{
 
         const { query: {nombre, apellido} } = req;
         res.json({
@@ -110,13 +103,8 @@ router
         })
     })
 
-    */
+  
 
 //exportamos la rutas
 module.exports.RouterIndex = router;
 
-// module = {
-//     exports: {
-//         RouterIndex: router
-//     }
-// }
