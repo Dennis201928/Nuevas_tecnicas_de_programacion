@@ -2,8 +2,8 @@
 //contexto de nube
 const {MongoClient}=require("mongodb");
 
-const DB_NAME=""
-const URL=""
+const DB_NAME="Clients"
+const URL="mongodb+srv://admin:admin1234@modulo2.d7g1o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 var MongoConnection=()=>new Promise(async(resolve,reject)=>{
     try {
