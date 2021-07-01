@@ -1,7 +1,7 @@
 //contexto de guardado en la nube
 //contexto de nube
 const {MongoClient}=require("mongodb");
-
+//CONEXION
 const DB_NAME="Clients"
 const URL=`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@modulo2.d7g1o.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
