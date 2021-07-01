@@ -3,7 +3,7 @@
 const {MongoClient}=require("mongodb");
 
 const DB_NAME="Clients"
-const URL="mongodb+srv://admin:admin1234@modulo2.d7g1o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const URL=`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@modulo2.d7g1o.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
 var MongoConnection=()=>new Promise(async(resolve,reject)=>{
     try {

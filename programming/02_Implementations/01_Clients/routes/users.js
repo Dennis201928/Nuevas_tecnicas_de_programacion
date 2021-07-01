@@ -1,11 +1,22 @@
 var express = require('express');
 var router = express.Router();
+const{findUsers}=require('../services/Clientes.service')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.json({
-    msg:"Path Users"
+router.get('/',async function(req, res, next) {
+  try {
+    const users=await findUsers()
+  res.status(200).json({
+    msg:"LISTA DE USUARIOS",
+    body:users
   });
+  } catch (error) {
+    console.log(error)
+  res.status(500).json({
+    msg:"INTERNAL SERVER ERROR"
+  });
+  }
+  
 });
 
 module.exports = router;
